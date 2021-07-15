@@ -1,0 +1,21 @@
+import os
+filename = input("Please enter the filename:")
+if os.path.exists('filename.txt'):
+    Action = input("Please enter the action:")
+    if Action == "Read":
+        filename= open("filename.txt","r")
+        r = filename.read()
+        print(r)
+    if Action == "Delete":
+        os.remove("Filename")
+        Newfile= open("Newfile.txt","w")
+        Newfile.close()
+    if Action == "Append":
+        filename = open("filename.txt","w")
+        text= []
+        Content = input("Please enter the text:")
+        text.append(Content)
+        for i in text:
+            for j in i:
+              filename.write(str(i))
+              filename.write(" ")
