@@ -1,21 +1,32 @@
 import os
-filename = input("Please enter the filename:")
-if os.path.exists('filename.txt'):
+naruto ="0"
+naruto= input("Please enter the filename:")
+if os.path.isfile(naruto):
     Action = input("Please enter the action:")
     if Action == "Read":
-        filename= open("filename.txt","r")
+        filename= open(naruto,"r")
         r = filename.read()
         print(r)
     if Action == "Delete":
-        os.remove("Filename")
+        os.remove(naruto)
         Newfile= open("Newfile.txt","w")
         Newfile.close()
     if Action == "Append":
-        filename = open("filename.txt","w")
+        filename = open(naruto,"a")
         text= []
         Content = input("Please enter the text:")
         text.append(Content)
         for i in text:
-            for j in i:
-              filename.write(str(i))
-              filename.write(" ")
+            #for j in i:
+            filename.write(str(i))
+        
+else:
+    Createfile=open(naruto,"w")
+    Content=[]
+    Input = input("Please enter the text you want to enter")
+    Content.append(Input)
+    for i in Content:
+        #for j in i:
+        Createfile.write(str(i))
+            #Createfile.write(" ")
+    print(Content)
